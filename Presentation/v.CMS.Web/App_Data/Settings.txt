@@ -1,0 +1,2 @@
+DataProvider: sqlserver
+DataConnectionString: Data Source=.\MSSQLSERVER2014;Initial Catalog=vCMS;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=123456

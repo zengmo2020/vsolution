@@ -1,0 +1,43 @@
+﻿@model Post
+
+@Html.ValidationSummary(true)
+@Html.HiddenFor(model => model.Id)
+
+<div class="content">
+    <div class="form-horizontal">
+        <div id="news-edit" class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                @Html.RenderBootstrapTabHeader("tab-info", "基本信息", true)
+                @Html.RenderBootstrapTabHeader("tab-seo", "搜索引擎优化")
+            </ul>
+            <div class="tab-content">
+                @Html.RenderBootstrapTabContent("tab-info", @TabInfo(), true)
+                @Html.RenderBootstrapTabContent("tab-seo", @TabSeo())
+            </div>
+        </div>
+    </div>
+</div>
+
+@helper TabInfo()
+{
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        标题
+                    </div>
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(model => model.Title)
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@helper TabSeo()
+{
+
+}
